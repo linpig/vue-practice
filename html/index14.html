@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>vue v-for</title>
+
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+        <ul id="example-1">
+          <li v-for="item in items">
+              {{ item.message }}
+          </li>
+        </ul>
+
+
+        <ul id="example-2">
+          <li v-for="(item , index) in items">
+            {{ parentMessage }} - {{ index }} - {{ item.message }}
+          </li>
+        </ul>
+        <script>
+            var example1 = new Vue({
+              el:'#example-1',
+              data: {
+                items:[
+                  {message: 'foo'},
+                  {message: 'Bar'}
+                ]
+              }
+            })
+
+            var example2 = new Vue({
+              el:'#example-2',
+              data:{
+                parentMessage: '我是',
+                items:[
+                  { message:'Foo' },
+                  { message:'Bar' }
+                ]
+              }
+            })
+        </script>
+    </body>
+</html>

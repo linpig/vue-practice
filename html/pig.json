@@ -1,0 +1,54 @@
+[
+{
+  "firstName": "John", "lastName": "Smith", "age": 25,
+  "address" : {
+      "streetAddress": "21 2nd Street",
+      "city": "New York",
+      "state": "NY",
+      "postalCode": "10021"
+  },
+  "phoneNumber": [
+      {"type": "home", "number": "4444444444"},
+      {"type": "fax", "number": "646 555-4567"}
+   ]
+},
+{
+  "firstName": "John", "lastName": "Smith", "age": 25,
+  "address" : {
+      "streetAddress": "21 2nd Street",
+      "city": "New York",
+      "state": "NY",
+      "postalCode": "10021"
+  },
+  "phoneNumber": [
+      {"type": "home", "number": "333333333"},
+      {"type": "fax", "number": "646 555-4567"}
+   ]
+},
+{
+  "firstName": "John", "lastName": "Smith", "age": 25,
+  "address" : {
+      "streetAddress": "21 2nd Street",
+      "city": "New York",
+      "state": "NY",
+      "postalCode": "10021"
+  },
+  "phoneNumber": [
+      {"type": "home", "number": "2222222222"},
+      {"type": "fax", "number": "646 555-4567"}
+   ]
+},
+{
+  "firstName": "John", "lastName": "Smith", "age": 25,
+  "address" : {
+      "streetAddress": "21 2nd Street",
+      "city": "New York",
+      "state": "NY",
+      "postalCode": "10021"
+  },
+  "phoneNumber": [
+      {"type": "home", "number": "11111111111"},
+      {"type": "fax", "number": "646 555-4567"}
+   ]
+}
+]

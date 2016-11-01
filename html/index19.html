@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>事件處理</title>
+
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+
+      <div id="example-1">
+        <button v-on:click="counter += 1">增加1</button>
+        <p>
+          這個按鈕被點擊了 {{ counter }} 次
+        </p>
+      </div>
+
+      <div id="example-2">
+        <button v-on:click="greet">Greet</button>
+      </div>
+
+      <div id="example-3">
+        <button v-on:click="say('hi')">Say hi</button>
+        <button v-on:click="say('what')">Say what</button>
+      </div>
+
+
+        <script>
+
+
+            var example1 = new Vue({
+              el:'#example-1',
+              data:{
+                counter:0
+              }
+            })
+
+            new Vue({
+              el:'#example-3',
+              methods:{
+                say:function(message){
+                  alert(message)
+                }
+              }
+            })
+
+
+            var example2 = new Vue({
+              el:'#example-2',
+              data:{
+                name:'Vue.js'
+              },
+              methods:{
+                greet:function(event){
+                  alert('Hello' + this.name + '!')
+                  alert(event.target.tagName)
+                }
+              }
+            })
+        </script>
+    </body>
+</html>

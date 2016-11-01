@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>vue 練習</title>
+
+         <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+
+      <div id="app">
+          <h2>範例1</h2>
+          <p>{{ message.split('').reverse().join('') }}</p>
+          <span v-once>This will never change: {{ message }}</span>
+          <div v-html="message">
+
+          </div>
+          <div class="">
+            {{ number + 1 }}
+
+            
+          </div>
+          <div v-bind:id="dynamicId">{{ dynamicId }}</div>
+
+          <button v-bind:disabled="someDynamicCondition">Button</button>
+      </div>
+
+        <script>
+
+        new Vue({
+          // ...
+          filters: {
+            capitalize: function (value) {
+              if (!value) return ''
+              value = value.toString()
+              return value.charAt(0).toUpperCase() + value.slice(1)
+            }
+          }
+        })
+
+        //  範例 一
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: '<div>Hello Vue.js!</div>',
+                dynamicId:1,
+                someDynamicCondition:true,
+                number:5
+            }
+        })
+        </script>
+    </body>
+</html>

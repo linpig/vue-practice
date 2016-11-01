@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>vue v-for</title>
+
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+
+
+        <ul id="repeat-object" class="demo">
+            <div v-for="(value,key) in object">
+              {{ key }} : {{ value }}
+            </div>
+            <div v-for="(value,key,index) in object">
+              {{ index }}.{{ key }} : {{ value }}
+            </div>
+
+            <div>
+              <span v-for="n in 10">{{ n }}</span>
+            </div>
+        </ul>
+
+        <script>
+            var example1 = new Vue({
+                el: '#repeat-object',
+                data: {
+                    object: {
+                        FirstName: 'John',
+                        LastName: 'Doe',
+                        Age: 30
+                    }
+                }
+            })
+        </script>
+    </body>
+</html>

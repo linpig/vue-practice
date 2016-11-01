@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>vue 練習</title>
+
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+
+      <div id="app">
+        <app-nav></app-nav>
+        <app-view>
+          <app-sidebar v-for="todo in todos" v-bind:todo="todo">
+
+          </app-sidebar>
+          <app-content v-for="cc in ccs" v-bind:cc="cc"></app-content>
+        </app-view>
+      </div>
+
+
+        <script>
+  // 範例七
+          Vue.component('app-sidebar',{
+            props:['todo'],
+            template:'<li>{{ todo.text }}</li>'
+          })
+          Vue.component('app-content',{
+            props:['cc'],
+            template:'<li>{{ cc.text }}</li>'
+          })
+          var app = new Vue({
+            el:'#app',
+            data:{
+              todos:[
+                { text: 'Learn JavaScript' },
+                { text: 'Learn Vue' },
+                { text: 'Build something awesome' }
+              ],
+              ccs:[
+                { text: 'Learn JavaScript' },
+                { text: 'Learn Vue' },
+                { text: 'Build something awesome' }
+              ]
+            }
+          })
+        </script>
+    </body>
+</html>

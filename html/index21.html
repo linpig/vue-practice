@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>ajax 撈值</title>
+
+        <script src="../js/vue.min.js"></script>
+        <script src="../js/jquery-1.11.3.min.js"></script>
+    </head>
+    <body>
+
+        <div id="app">
+            <table>
+                <thead>
+                    <tr>
+                        <!-- <th style='width:3%; text-align: left'>ID</th> -->
+                        <th style='width:5%; text-align: left'>姓名</th>
+                        <th style='width:10%; text-align: left'>地址</th>
+                        <th style='width:10%; text-align: left'>電話</th>
+                        <!-- <th style='width:10%; text-align: left'>圖片</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="goods in goodsList">
+
+                        <td>{{goods.firstName}}
+                            ||
+                            {{ goods.lastName }}
+                            ||
+                            {{ goods.age }}</td>
+                        <td>{{goods.address.streetAddress}}
+                            ||
+                            {{goods.address.city}}
+                        </td>
+                        <td>{{goods.phoneNumber[0].number}}
+                            ,
+                            {{goods.phoneNumber[1].number}}</td>
+
+                        <!-- <td>{{goods.gender}}</td> -->
+
+                        <!-- <td><img :src="'http://www.event-smad.com/uploads/'+goods.image"/></td> -->
+                    </tr>
+                </tbody>
+            </table>
+            <button v-on:click="addUser()">新增</button>
+        </div>
+
+        <script>
+            // sid = posts[index].sid,     name = posts[index].name,     story = posts[index].story,   gender = posts[index].gender,   image = posts[index].image;
+            var goodsVue = new Vue({
+                el: '#app',
+                data: {
+                    goodsList: []
+                },
+                created: function() {
+                    this.showData()
+                },
+                methods: {
+                    showData: function() {
+                        var _self = this;
+                        $.ajax({
+                            type: 'GET',
+                            url: './pig.json',
+                            success: function(data) {
+                                printjson = JSON.stringify(data);
+                                _self.goodsList = data
+                            }
+                        });
+                    }
+                },
+
+            })
+        </script>
+    </body>
+</html>

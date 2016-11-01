@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>vue v-if</title>
+
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="demo">
+            <template v-if="ok">
+                <h1>Title</h1>
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+            </template>
+            <template v-else>
+                <h1>no</h1>
+                <p>Paragraph 1</p>
+                <p>Paragraph 2</p>
+            </template>
+            <button v-on:click="yyse">yes</button>
+            <button v-on:click="nno">no</button>
+        </div>
+
+        <script>
+            var app = new Vue({
+                el: '#demo',
+                data: {
+                    ok: true,
+                    doSomething:true
+                },
+                methods:{
+                  nno:function(){
+                    this.ok=false
+                  },
+                  yyse:function(){
+                    this.ok=true
+                  }
+                }
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>vue 對象語法</title>
+
+        <script src="../js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="demo">
+            <!-- <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }"></div>
+            <div v-bind:class="classObject"></div> -->
+            <div v-bind:class="classObject">測試</div>
+        </div>
+
+        <script>
+            var vm = new Vue({
+                el: '#demo',
+                data: {
+                    isActive: true,
+                    error: null
+                },
+             computed : {
+                classObject: function() {
+                    return {
+                        active: this.isActive && !this.error,
+                        'text-danger': this.error && this.error.type === 'fatal'
+                    }
+                }
+              }
+            })
+        </script>
+    </body>
+</html>
